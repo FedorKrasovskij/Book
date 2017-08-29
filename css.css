@@ -1,0 +1,94 @@
+body {
+  text-align: center;
+  font-family: "Dosis";
+  background: url(img/wallperz.com-20170331053013.jpg);
+  background-attachment: fixed;
+}
+input {
+  background-attachment: fixed;
+  width: 15%;
+}
+.grid-container {
+  display: -ms-grid;
+  display: grid;
+  width: 40%;
+  text-align: center;
+  margin: 0 auto;
+  display: none;
+}
+.grid-element {
+  background-color: #444;
+  padding: 20px;
+  font-size: 2em;
+   border-radius: 10px;
+   background: #BDB76B;
+}
+.element-b {
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 4;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 2;
+}
+.element-c {
+  -ms-grid-column: 5;
+      grid-column-start: 5;
+  grid-column-end: 6;
+  -ms-grid-row: 1;
+      grid-row-start: 1;
+  grid-row-end: 2;
+}
+img{
+  max-width: 60%;
+}
+p{
+ font-size: 60%;
+}
+.img{
+  width: 15%;
+  cursor: pointer;
+  -webkit-box-shadow: -5px -5px;
+          box-shadow: -5px -5px;
+}
+.grid-element img{
+  -webkit-box-shadow: 0 0 5px 2px #FFFF00;
+          box-shadow: 0 0 5px 2px #FFFF00;
+}
+.titlle{
+  cursor: pointer;
+}
+.line{
+  width: 15%;
+}
+.find{
+  color: #FFD700;
+  border-bottom: 2px red dashed;
+}
+input{
+  border: none;
+}
+.form-fixed{
+ position: fixed;
+  left: 50%;
+  width: 70%;
+}
+.but{
+  width: 6%;
+  border-radius: 10px;
+  background: #BEBEBE;
+}
+.input{
+  background: #D3D3D3;
+}
+.line2{
+  width: 30%;
+ border: 0;
+    height: 2px; 
+    background-image:      -o-linear-gradient(left, rgba(0,0,0,0), rgba(0,0,0,0.75), rgba(0,0,0,0)); 
+}
+@media (max-width:900px){
+.element-c{
+  display: none;
+}
+}

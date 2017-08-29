@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device=width, initial-scale=1.0">
+    <title>JS</title>
+    <script src="js.js"></script>
+    <link rel="stylesheet" type="text/css" href="css.css"> 
+</head>
+<body>
+<div class="form-fixed">
+ <form method='GET'>
+      <input type="text" id="find" value="" class="input"> 
+      <input type="button" onclick="javascript: FindOnPage('find'); return false;" class="but" value="Искать"/>
+      <input type="reset" class="but" value="Отмена"/>
+  </form>
+  <hr class="line2">
+  </div>
+<div class='price' id='price'>
+  <div>
+   <div class='prod' id='fing_0'>
+    <h1 data-title='0' class="titlle">Пушкин А.С</h1>
+   </div>
+      <img src="img/photo2661.jpg" data-title='0' class="img" alt="img">
+  <div class="grid-container">
+     <div class="grid-element element-b">
+  	   <p>«Барышня-крестьянка» А. С. Пушкина (1799-1837), входящая в сборник «Повести покойного Ивана Петровича Белкина», была написана Болдинской осенью 1830 г. История отношений Лизы Муромской, представившейся крестьянкой Акулиной, и Алексея Берестова — прекрасный пример «нескучной» классики и тонкой, смешной, психологически точной прозы великого автора.
+       Текст повести снабжен подробными комментариями. Издание проиллюстрировано циклом акварелей известной петербургской художницы Галины Лавренко.
+       </p>
+       <hr>
+    <span>200 грн</span>
+  </div>
+  <div class="grid-element element-c">
+  	  <img src="img/photo2661.jpg" alt="img">
+  </div>
+  </div>
+  </div>
+<hr class="line">
+<div>
+  <div class='prod' id='fing_1'>
+    <h1 data-title='1' class="titlle">Гинзбург Е.С</h1>
+  </div>
+    <img src="img/photo_2264.jpg" data-title='1' class="img" alt="img">
+<div class="grid-container">
+  <div class="grid-element element-b">
+  	<p>Эта книга — первое иллюстрированное издание романа. Цикл из 74 иллюстраций создан молодым петербургским художником Иваном Задорожным специально для издательства «Вита Нова». В приложении опубликованы статьи дочери писателя — Антонины Аксеновой, воспоминания Льва Копелева и Раисы Орловой, а также фотографии и документы, относящиеся к судьбе Евгении Гинзбург.
+  	</p>
+<span>150 грн</span>
+  </div>
+  <div class="grid-element element-c">
+  	<img src="img/photo_2264.jpg" alt="img">
+  </div>
+</div>
+ </div>
+<hr class="line">
+<div>
+  <div class='prod' id='fing_2'>
+    <h1 data-title='2' class="titlle">Жорж Монторгёй<br>ЛЮДОВИК XI</h1>
+  </div>
+    <img src="img/photo2624.jpg" data-title='2' class="img" alt="img">
+<div class="grid-container">
+  <div class="grid-element element-b">
+  	<p>Книга известного французского писателя Жоржа Монторгёя (настоящее имя Октав Лебег; 1857-1933) повествует о короле Франции Людовике XI, личности неоднозначной. Историки наградили его титулами Благоразумный и Осторожный, как выдающегося монарха и блестящего политика. Главной его заслугой в глазах потомков стало объединение раздробленной феодальной Франции под абсолютной властью короля.
+  	</p>
+<span>350 грн</span>
+  </div>
+  <div class="grid-element element-c">
+  	<img src="img/photo2624.jpg" alt="img">
+  </div>
+</div>
+ </div>
+<hr class="line">
+<div>
+  <div class='prod' id='fing_3'>
+    <h1 data-title='3' class="titlle place_for_search"> Муравьев В.Б</h1>
+  </div>
+    <img src="img/photo_2423.jpg" data-title='3' class="img" alt="img">
+<div class="grid-container">
+  <div class="grid-element element-b">
+  	<p>Издание является представительной антологией сказок рус­ских писателей от известного с середины XVII в. «Сказания о Еруслане Лазаревиче» до сказов П. П. Бажова и Б. В. Шергина. Сказки развлекательные, назидательные, обличительные; романтические, исторические, научно-фантастические; основанные на фольклорных образах и собственно авторские, с оригинальным сюжетом... На их примере читатель увидит, как развивались и сменяли друг друга литературные стили и направления.
+  	</p>
+<span>190 грн</span>
+  </div>
+  <div class="grid-element element-c">
+  	<img src="img/photo_2423.jpg" alt="img">
+  </div>
+</div>
+ </div>
+ </div>
+<script
+  src="http://code.jquery.com/jquery-3.2.1.js"
+  integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE="
+  crossorigin="anonymous"></script>
+
+<script type="text/javascript">
+var arrayOfP = $(".grid-container");
+var arrayOfTitles = $(".img");
+
+arrayOfTitles.click(function(e){
+  
+   var index = e.target.dataset.title;
+   index = + (index);
+   
+   $(arrayOfP[index]).slideToggle();
+
+   });
+</script>
+
+<script type="text/javascript">
+ var CopyPage = []; // копия страницы в ихсодном виде
+                        
+            function TrimStr(s) {
+                s = s.replace( /^\s+/g, '');
+                return s.replace( /\s+$/g, '');
+            }
+            
+            function FindOnPage(inputId) {//ищет текст на странице, в параметр передается ID поля для ввода
+
+                var obj = window.document.getElementById(inputId);
+                var textToFind;
+
+                if (obj) {
+                    textToFind = TrimStr(obj.value);//обрезаем пробелы
+                } else {
+                    alert("Введенная фраза не найдена");
+                    return;
+                }
+                
+                if (textToFind == "") {
+                    alert("Вы ничего не ввели");
+                    return;
+                }
+                        if(document.getElementById('price').innerHTML.toLowerCase().indexOf(textToFind.toLowerCase()) == -1)
+                {
+                alert("Ничего не найдено, проверьте правильность ввода!");
+                }
+                
+                else
+                {
+                
+                for (var i=0; i<5; i++)
+                {
+                var id=document.getElementById("fing_"+i);
+
+                if (CopyPage[i] == undefined)
+                     {CopyPage[i]=id.innerHTML;}
+                else {id.innerHTML=CopyPage[i];}
+
+                
+                if(~id.innerHTML.toLowerCase().indexOf(textToFind.toLowerCase())) //(если не -1)
+                //if (copy_page[i] != '')
+                    {
+                    id.style.display='block';
+                    id.innerHTML = id.innerHTML.replace(eval("/"+textToFind+"/gi"),"<a name="+textToFind+" class=find>"+textToFind+"</a>"); //Заменяем найденный текст ссылками с якорем;
+
+                   } }
+                }
+                }   
+
+</script>
+</body>
+</html>
